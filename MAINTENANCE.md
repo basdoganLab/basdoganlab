@@ -2,11 +2,40 @@
 
 This document is for lab members who maintain the Basdogan Lab website.
 
-## 1. Quick Tasks
+## 1. Page-by-Page Update Guide
 
-### Add a news post
-1. Create a new file in `src/content/news/` using `YYYY-MM-DD-title.md`.
-2. Use this frontmatter:
+Use this section to update each public page explicitly: Home, Research, News, Publications, Team, and Contact.
+
+### Home page (`/`)
+File: `src/pages/index.astro`
+1. Update hero title, subtitle, and call-to-action text in the top section.
+2. Update the three summary cards (Research, Publications, Join Us) as needed.
+3. Keep links using `getPermalink(...)` for project-site compatibility.
+4. Run `npm run build` and confirm `/` renders as expected.
+
+### Research page (`/research`)
+Main listing file: `src/pages/research.astro`
+Research data source: `src/data/research.ts`
+Detail page template: `src/pages/research/[slug].astro`
+1. Edit research content in `src/data/research.ts` only.
+2. For each area, maintain:
+   - `slug`
+   - `title`
+   - `summary`
+   - `overview`
+   - `focus`
+   - `methods`
+   - `recentDirections`
+3. The listing page and detail pages update automatically from this data.
+4. Run `npm run build` and verify:
+   - `/research`
+   - `/research/<slug>` for each research area.
+
+### News page (`/news`)
+Content folder: `src/content/news/`
+Rendered page file: `src/pages/news.astro`
+1. Add one Markdown file per news item: `YYYY-MM-DD-title.md`.
+2. Use required frontmatter:
    ```md
    ---
    title: "Your title"
@@ -16,37 +45,58 @@ This document is for lab members who maintain the Basdogan Lab website.
    draft: false
    ---
    ```
-3. Add body text below frontmatter.
-4. Run `npm run build` locally.
-5. Open a PR and merge to `main`.
+3. Add optional body text below frontmatter.
+4. Keep `draft: false` for published items.
+5. Run `npm run build` and verify newest items appear first on `/news`.
 
-### Add a publication
-1. Edit `src/data/publications.json`.
-2. Add a new object with fields:
-   - `title`, `authors`, `venue`, `year`
-   - optional: `doi`, `url`, `pdf`, `highlight`
-3. Keep JSON valid (commas and quotes).
-4. Run `npm run build` and merge via PR.
+### Publications page (`/publications`)
+Data file: `src/data/publications.json`
+Rendered page file: `src/pages/publications.astro`
+1. Add or edit publication objects in `src/data/publications.json`.
+2. Required fields:
+   - `title`
+   - `authors`
+   - `venue`
+   - `year`
+3. Optional fields:
+   - `doi`
+   - `url`
+   - `pdf`
+   - `highlight`
+4. Keep JSON valid (double quotes, commas, no trailing commas).
+5. Run `npm run build` and verify order and links on `/publications`.
 
-### Add or update a team member
-1. Edit `src/data/team.json`.
-2. Add/update member fields:
-   - `name`, `role`, `photo`, `order`
-   - optional: `email`, `website`, `researchInterests`
-3. Upload photo to `public/images/` and reference path as `/images/...`.
-4. Use `order` to control display sequence.
-5. Run `npm run build` and merge via PR.
+### Team page (`/team`)
+Data file: `src/data/team.json`
+Rendered page file: `src/pages/team.astro`
+1. Add or edit team entries in `src/data/team.json`.
+2. Required fields:
+   - `name`
+   - `role`
+   - `photo`
+   - `order`
+3. Optional fields:
+   - `email`
+   - `website`
+   - `researchInterests`
+4. Put images in `public/images/` and reference as `/images/...`.
+5. Use `order` to control display sequence.
+6. Run `npm run build` and verify `/team`.
 
-### Update PI bio or research summary
-1. Home summary: `src/pages/index.astro`.
-2. Research themes: `src/pages/research.astro`.
-3. Keep language concise and externally readable.
-4. Build and merge via PR.
+### Contact page (`/contact`)
+File: `src/pages/contact.astro`
+1. Update PI name, email, office location, and application instructions.
+2. Keep contact email and role text concise and current.
+3. Run `npm run build` and verify `/contact`.
 
-### Change contact information
-1. Edit `src/pages/contact.astro`.
-2. Update email/office/application text.
-3. Build and merge via PR.
+### Standard update sequence (for any page)
+1. Create a branch: `git checkout -b feature/<short-name>`.
+2. Make edits in the correct source file(s).
+3. Run checks:
+   - `npm ci` (if dependencies changed)
+   - `npm run build`
+4. Preview locally with `npm run dev`.
+5. Open PR to `main`, get review, merge.
 
 ## 2. Release Process
 
