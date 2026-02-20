@@ -1,0 +1,43 @@
+site:
+  name: Basdogan Lab
+  site: 'https://lab.example.edu'
+  base: '/'
+  trailingSlash: false
+
+  googleSiteVerificationId: null
+
+metadata:
+  title:
+    default: Basdogan Lab
+    template: '%s | Basdogan Lab'
+  description: 'Research group website for the Basdogan Lab. Explore current projects, publications, team members, and contact details.'
+  robots:
+    index: true
+    follow: true
+  openGraph:
+    site_name: Basdogan Lab
+    images:
+      - url: '~/assets/images/default.png'
+        width: 1200
+        height: 628
+    type: website
+  twitter:
+    handle: null
+    site: null
+    cardType: summary_large_image
+
+i18n:
+  language: en
+  textDirection: ltr
+
+apps:
+  blog:
+    isEnabled: false
+
+analytics:
+  vendors:
+    googleAnalytics:
+      id: null
+
+ui:
+  theme: 'light:only'

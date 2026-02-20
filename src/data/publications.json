@@ -1,0 +1,29 @@
+[
+  {
+    "title": "A Placeholder Study on Data-Driven Molecular Design",
+    "authors": ["Placeholder Name", "Coauthor A", "Coauthor B"],
+    "venue": "Journal of Computational Science",
+    "year": 2026,
+    "doi": "10.0000/example-doi-1",
+    "url": "https://example.com/publication-1",
+    "pdf": "https://example.com/publication-1.pdf",
+    "highlight": true
+  },
+  {
+    "title": "Simulation-Informed Workflows for Materials Discovery",
+    "authors": ["Placeholder Name", "Coauthor C"],
+    "venue": "Computational Materials Conference",
+    "year": 2025,
+    "doi": "10.0000/example-doi-2",
+    "url": "https://example.com/publication-2",
+    "highlight": false
+  },
+  {
+    "title": "Benchmarking Reproducible Scientific Pipelines",
+    "authors": ["Coauthor D", "Placeholder Name"],
+    "venue": "arXiv",
+    "year": 2024,
+    "url": "https://arxiv.org/abs/0000.00000",
+    "highlight": false
+  }
+]

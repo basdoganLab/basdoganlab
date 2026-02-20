@@ -1,0 +1,27 @@
+[
+  {
+    "name": "Prof. Placeholder Name",
+    "role": "PI",
+    "photo": "/images/placeholders/person-1.svg",
+    "email": "pi@lab.example.edu",
+    "website": "https://lab.example.edu",
+    "researchInterests": ["Computational Modeling", "Scientific Machine Learning"],
+    "order": 1
+  },
+  {
+    "name": "Postdoc Placeholder",
+    "role": "Postdoc",
+    "photo": "/images/placeholders/person-2.svg",
+    "email": "postdoc@lab.example.edu",
+    "researchInterests": ["Molecular Dynamics", "Data-Driven Materials"],
+    "order": 2
+  },
+  {
+    "name": "PhD Student Placeholder",
+    "role": "PhD",
+    "photo": "/images/placeholders/person-3.svg",
+    "email": "student@lab.example.edu",
+    "researchInterests": ["Reproducible Workflows", "HPC Simulation"],
+    "order": 3
+  }
+]

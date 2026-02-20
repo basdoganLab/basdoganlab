@@ -1,0 +1,41 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+
+const metadata = {
+  title: 'Home',
+  description: 'Basdogan Lab researches computational and data-driven methods in engineering and science.',
+};
+---
+
+<Layout metadata={metadata}>
+  <section class="mx-auto max-w-7xl px-6 py-16 lg:py-24">
+    <p class="text-sm uppercase tracking-widest text-sky-700 font-semibold">Basdogan Lab</p>
+    <h1 class="mt-4 text-4xl md:text-6xl font-bold tracking-tight text-gray-900">Computational Research for Real-World Impact</h1>
+    <p class="mt-6 max-w-3xl text-lg text-gray-700">
+      We develop models, simulation pipelines, and machine learning tools that bridge theory and experiment.
+      Our work spans molecular systems, materials design, and robust scientific software.
+    </p>
+    <div class="mt-8 flex flex-wrap gap-3">
+      <a href="/research" class="inline-flex rounded-lg bg-sky-700 px-5 py-3 text-white font-semibold hover:bg-sky-600">Explore Research</a>
+      <a href="/publications" class="inline-flex rounded-lg border border-gray-300 px-5 py-3 text-gray-900 font-semibold hover:bg-gray-100">View Publications</a>
+    </div>
+  </section>
+
+  <section class="mx-auto max-w-7xl px-6 pb-20 grid gap-6 md:grid-cols-3">
+    <article class="rounded-2xl border border-gray-200 bg-white p-6 shadow-sm">
+      <h2 class="text-xl font-semibold">Research</h2>
+      <p class="mt-2 text-gray-700">Learn about active projects and thematic research areas.</p>
+      <a href="/research" class="mt-4 inline-block text-sky-700 font-medium">Go to Research</a>
+    </article>
+    <article class="rounded-2xl border border-gray-200 bg-white p-6 shadow-sm">
+      <h2 class="text-xl font-semibold">Publications</h2>
+      <p class="mt-2 text-gray-700">Browse selected papers, preprints, and software artifacts.</p>
+      <a href="/publications" class="mt-4 inline-block text-sky-700 font-medium">Go to Publications</a>
+    </article>
+    <article class="rounded-2xl border border-gray-200 bg-white p-6 shadow-sm">
+      <h2 class="text-xl font-semibold">Join Us</h2>
+      <p class="mt-2 text-gray-700">We welcome motivated students and collaborators.</p>
+      <a href="/contact" class="mt-4 inline-block text-sky-700 font-medium">Go to Contact</a>
+    </article>
+  </section>
+</Layout>
