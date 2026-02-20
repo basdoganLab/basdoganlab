@@ -1,7 +1,7 @@
 site:
   name: Basdogan Lab
-  site: 'https://lab.example.edu'
-  base: '/'
+  site: 'https://cytwyatt.github.io'
+  base: '/basdoganlab'
   trailingSlash: false
 
   googleSiteVerificationId: null

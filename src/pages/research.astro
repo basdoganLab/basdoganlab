@@ -1,6 +1,7 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
 import { researchAreas } from '~/data/research';
+import { getPermalink } from '~/utils/permalinks';
 
 const metadata = {
   title: 'Research',
@@ -23,7 +24,7 @@ const metadata = {
             <h2 class="text-xl font-semibold text-gray-900">{area.title}</h2>
             <p class="mt-3 text-gray-700">{area.summary}</p>
             <a
-              href={`/research/${area.slug}`}
+              href={getPermalink(`/research/${area.slug}`)}
               class="mt-5 inline-flex items-center rounded-lg bg-sky-700 px-4 py-2 text-sm font-semibold text-white hover:bg-sky-600"
             >
               Read More

@@ -2,6 +2,7 @@
 import Layout from '~/layouts/PageLayout.astro';
 import { researchAreas } from '~/data/research';
 import type { ResearchArea } from '~/data/research';
+import { getPermalink } from '~/utils/permalinks';
 
 export function getStaticPaths() {
   return researchAreas.map((area) => ({
@@ -24,7 +25,7 @@ const metadata = {
 
 <Layout metadata={metadata}>
   <section class="mx-auto max-w-5xl px-6 py-16 lg:py-24">
-    <a href="/research" class="inline-flex items-center text-sm font-medium text-sky-700 hover:underline">← Back to Research</a>
+    <a href={getPermalink('/research')} class="inline-flex items-center text-sm font-medium text-sky-700 hover:underline">← Back to Research</a>
 
     <h1 class="mt-4 text-4xl font-bold tracking-tight text-gray-900">{area.title}</h1>
     <p class="mt-4 text-lg text-gray-700">{area.overview}</p>
@@ -53,4 +54,3 @@ const metadata = {
     </div>
   </section>
 </Layout>
-
