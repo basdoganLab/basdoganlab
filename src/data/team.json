@@ -1,9 +1,9 @@
 [
   {
-    "name": "Prof. Placeholder Name",
+    "name": "Prof. Yasemin Basdogan",
     "role": "PI",
-    "photo": "/images/placeholders/person-1.svg",
-    "email": "pi@lab.example.edu",
+    "photo": "/images/Basdogan_Yasemin.jpg",
+    "email": "yaseminbasdogan@rochester.edu",
     "website": "https://lab.example.edu",
     "researchInterests": ["Computational Modeling", "Scientific Machine Learning"],
     "order": 1
