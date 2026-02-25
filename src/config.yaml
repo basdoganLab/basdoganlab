@@ -1,6 +1,6 @@
 site:
   name: Basdogan Lab
-  site: 'https://cytwyatt.github.io'
+  site: 'https://basdoganLab.github.io'
   base: '/basdoganlab'
   trailingSlash: false
 
