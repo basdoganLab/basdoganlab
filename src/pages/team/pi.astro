@@ -1,7 +1,7 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
 import teamData from '~/data/team.json';
-import { getPermalink } from '~/utils/permalinks';
+import { getAsset, getPermalink } from '~/utils/permalinks';
 
 interface TeamMember {
   name: string;
@@ -14,6 +14,8 @@ interface TeamMember {
 }
 
 const pi = (teamData as TeamMember[]).find((member) => member.role === 'PI');
+const resolvePhoto = (photo: string) =>
+  photo.startsWith('http://') || photo.startsWith('https://') ? photo : getAsset(photo);
 
 const metadata = {
   title: pi ? `${pi.name}` : 'PI Profile',
@@ -29,7 +31,7 @@ const metadata = {
       pi ? (
         <>
           <div class="mt-6 flex flex-col gap-6 md:flex-row md:items-start">
-            <img src={getPermalink(pi.photo, 'asset')} alt={`${pi.name} portrait`} class="h-44 w-44 rounded-2xl object-cover" />
+            <img src={resolvePhoto(pi.photo)} alt={`${pi.name} portrait`} class="h-44 w-44 rounded-2xl object-cover" />
             <div>
               <h1 class="text-4xl font-bold tracking-tight text-gray-900">{pi.name}</h1>
               <p class="mt-2 text-lg font-medium text-sky-700">{pi.role}</p>
