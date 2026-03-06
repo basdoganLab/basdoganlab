@@ -49,7 +49,7 @@ export const footerData = {
   ],
   secondaryLinks: [],
   socialLinks: [
-    { ariaLabel: 'GitHub', icon: 'tabler:brand-github', href: 'https://github.com' },
+    { ariaLabel: 'GitHub', icon: 'tabler:brand-github', href: 'https://github.com/basdoganLab' },
     { ariaLabel: 'Google Scholar', icon: 'tabler:school', href: '#' },
   ],
   footNote: `
