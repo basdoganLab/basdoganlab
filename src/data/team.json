@@ -2,6 +2,7 @@
   {
     "name": "Prof. Yasemin Basdogan",
     "role": "PI",
+    "section": "pi",
     "photo": "/images/Basdogan_Yasemin.jpg",
     "email": "yaseminbasdogan@rochester.edu",
     "website": "https://lab.example.edu",
@@ -9,19 +10,13 @@
     "order": 1
   },
   {
-    "name": "Postdoc Placeholder",
-    "role": "Postdoc",
-    "photo": "/images/placeholders/person-2.svg",
-    "email": "postdoc@lab.example.edu",
-    "researchInterests": ["Molecular Dynamics", "Data-Driven Materials"],
-    "order": 2
-  },
-  {
-    "name": "PhD Student Placeholder",
-    "role": "PhD",
-    "photo": "/images/placeholders/person-3.svg",
-    "email": "student@lab.example.edu",
-    "researchInterests": ["Reproducible Workflows", "HPC Simulation"],
-    "order": 3
+    "name": "Mahima Vasudevan",
+    "role": "Undergraduate",
+    "section": "current",
+    "photo": "/images/mahima-vasudevan.jpg",
+    "email": "mvasudev@u.rochester.edu",
+    "bio": "Originally from India and raised in Pittsburgh, Mahima Vasudevan is a Biomedical Engineering undergraduate at the University of Rochester, concentrating in cell and tissue engineering with a minor in sustainability. She is a researcher in the Basdogan Lab in the Department of Chemical Engineering, where she is developing computational approaches to analyze and enhance the enzyme PETase. Her work uses molecular dynamics simulations and explores hybrid quantum mechanics/molecular mechanics (QM/MM) methods to investigate catalytic mechanisms at the enzyme’s active site.",
+    "researchInterests": ["PETase", "Molecular Dynamics Simulations", "QM/MM", "Catalytic Mechanisms"],
+    "order": 40
   }
 ]
