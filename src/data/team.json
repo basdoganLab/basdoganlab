@@ -10,6 +10,26 @@
     "order": 1
   },
   {
+    "name": "Yusuf Adegbesan",
+    "role": "PhD Candidate",
+    "section": "current",
+    "photo": "/images/yusuf-adegbesan.png",
+    "email": "yadegbes@UR.Rochester.edu",
+    "bio": "Yusuf is a PhD candidate whose research centers on computational catalyst discovery using density functional theory (DFT) calculations and machine learning. His work involves developing integrated computational frameworks that combine quantum-mechanical calculations with data-driven modeling to speed up the discovery of catalysts for sustainable energy conversion reactions. His current research focuses on machine-learning-guided catalyst design, where DFT calculations are combined with genetic algorithms to efficiently explore large chemical spaces. Yusuf holds a bachelor’s degree in chemical engineering from Ahmadu Bello University, Nigeria, and a master’s degree in petroleum engineering from Imperial College London, UK.",
+    "researchInterests": ["Computational catalysis", "DFT", "Machine learning"],
+    "order": 20
+  },
+  {
+    "name": "Jay-Brian Randone",
+    "role": "Undergraduate",
+    "section": "current",
+    "photo": "/images/Jay-Brian-Randone.JPG",
+    "email": "jrandone@u.rochester.edu",
+    "bio": "Jay-Brian Randone is a senior in Chemical Engineering from Italy and Indonesia, and is currently doing his Bachelors and Masters degree at the University of Rochester. His work incorporates Graph Neural Networks, Machine Learning Models, Genetic Algorithms and Molecular Dynamic simulations for Designing CO₂-Selective Polymer Membranes.",
+    "researchInterests": ["Computational Modeling", "Machine Learning", "Sustainability Research"],
+    "order": 40
+  },
+  {
     "name": "Mahima Vasudevan",
     "role": "Undergraduate",
     "section": "current",
@@ -17,6 +37,6 @@
     "email": "mvasudev@u.rochester.edu",
     "bio": "Originally from India and raised in Pittsburgh, Mahima Vasudevan is a Biomedical Engineering undergraduate at the University of Rochester, concentrating in cell and tissue engineering with a minor in sustainability. She is a researcher in the Basdogan Lab in the Department of Chemical Engineering, where she is developing computational approaches to analyze and enhance the enzyme PETase. Her work uses molecular dynamics simulations and explores hybrid quantum mechanics/molecular mechanics (QM/MM) methods to investigate catalytic mechanisms at the enzyme’s active site.",
     "researchInterests": ["PETase", "Molecular Dynamics Simulations", "QM/MM", "Catalytic Mechanisms"],
-    "order": 40
+    "order": 41
   }
 ]
