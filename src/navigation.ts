@@ -32,8 +32,8 @@ export const footerData = {
     {
       title: 'Contact',
       links: [
-        { text: 'Email', href: 'mailto:pi@lab.example.edu' },
-        { text: 'Department', href: '#' },
+        { text: 'Email', href: 'mailto:yaseminbasdogan@rochester.edu' },
+        { text: 'Department', href: 'https://www.hajim.rochester.edu/che/index.html' },
       ],
     },
     {
