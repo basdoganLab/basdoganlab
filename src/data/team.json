@@ -20,6 +20,27 @@
     "order": 20
   },
   {
+    "name": "Beam (Bingmeng) Wang",
+    "role": "PhD Candidate",
+    "section": "current",
+    "photo": "/images/beam-wang.jpg",
+    "email": "bwang69@ur.rochester.edu",
+    "bio": "Beam is a PhD student interested in the accelerated discovery of functional polymer membranes. His work combines multiscale molecular simulations with data-driven methods, including structural representation learning based on Graph Neural Networks (GNNs) and Chemical Language Models (CLMs), and generative AI approaches. Currently, he explores the untapped potential of Large Language Models (LLMs) to encode chemical knowledge and reasoning. His work investigates how LLMs can be combined with molecular simulations, machine-learning models, and active learning strategies to guide polymer design and efficiently navigate the vast chemical space. The ultimate goal is to reduce reliance on iterative trial-and-error and accelerate the discovery of next-generation high-performance polymers.",
+    "researchInterests": ["Representation learning", "Computational polymer design", "Large language models"],
+    "order": 21
+  },
+  {
+    "name": "Yangtao Chen",
+    "role": "PhD Candidate",
+    "section": "current",
+    "photo": "/images/yangtao-chen.jpg",
+    "email": "yangtao.chen@rochester.edu",
+    "bio": "Yangtao is a cat slave, AI enthusiast, and active agent user. He is also a PhD student in the Basdogan Lab, where his research primarily focuses on molecular simulations of biomembranes and polymers. His current work centers on designing new antibiotics by integrating molecular simulations with machine learning techniques.",
+    "website": "https://cytwyatt.github.io",
+    "researchInterests": ["Molecular simulation", "Computational polymer design"],
+    "order": 22
+  },
+  {
     "name": "Jay-Brian Randone",
     "role": "Undergraduate",
     "section": "current",
