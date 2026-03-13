@@ -69,5 +69,17 @@
     "bio": "Kinsley Collum is a sophomore in chemical engineering at the University of Rochester and is originally from Mississippi. Her research interest include environmental and electrochemical engineering, particularly the use of electrooxidation reactions that convert hydrocarbons into useful chemical products.",
     "researchInterests": ["Electro-oxidation", "Catalytic Mechanisms"],
     "order": 42
+  },
+  {
+    "name": "Siddharth Balaji",
+    "role": "Alumni",
+    "section": "alumni",
+    "photo": "/images/siddharth-balaji.jpeg",
+    "email": "sid14nitt@gmail.com",
+    "bio": "Siddharth is currently an M.S. student in Materials Science and Engineering at Georgia Tech. As a former Research Intern in the Basdogan Lab, he developed a Genetic Algorithm pipeline to predict CO₂ permeability in polymer membranes using machine learning models and acquisition functions.",
+    "previousPosition": "Research Intern",
+    "timeAtLab": "2024",
+    "currentPosition": "M.S. student in Materials Science and Engineering at Georgia Tech",
+    "order": 50
   }
 ]

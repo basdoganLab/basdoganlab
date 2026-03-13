@@ -11,6 +11,9 @@ interface TeamMember {
   website?: string;
   researchInterests?: string[];
   bio?: string;
+  previousPosition?: string;
+  timeAtLab?: string;
+  currentPosition?: string;
   section?: 'pi' | 'current' | 'alumni';
   order: number;
 }
@@ -62,6 +65,12 @@ const sections = [
                       />
                       <h3 class="mt-4 text-xl font-semibold text-gray-900">{member.name}</h3>
                       <p class="text-sky-700 font-medium">{member.role}</p>
+                      {member.previousPosition || member.timeAtLab ? (
+                        <p class="mt-3 text-sm text-gray-700">
+                          Previous position: {[member.previousPosition, member.timeAtLab].filter(Boolean).join(' | ')}
+                        </p>
+                      ) : null}
+                      {member.currentPosition ? <p class="mt-2 text-sm text-gray-700">Current position: {member.currentPosition}</p> : null}
                       {member.bio ? <p class="mt-3 text-sm leading-6 text-gray-700">{member.bio}</p> : null}
                       {member.researchInterests?.length ? (
                         <p class="mt-2 text-sm text-gray-700">Interests: {member.researchInterests.join(', ')}</p>
