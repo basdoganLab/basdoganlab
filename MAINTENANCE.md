@@ -68,8 +68,16 @@ Detail page template: `src/pages/research/[slug].astro`
    - `focus`
    - `methods`
    - `recentDirections`
+   - Optional `figures`
+     - `src`
+     - `alt`
+     - `caption`
+     - Optional `scale` (`1` = base size, `0.75` = 75% width, `2` = 200% width up to the container limit)
+     - Optional `width`
+     - Optional `height`
 3. The listing page and detail pages update automatically from this data.
-4. Run `npm run build` and verify:
+4. For figures, prefer images in `src/assets/images/` and reference them like `~/assets/images/your-figure.png`.
+5. Run `npm run build` and verify:
    - `/research`
    - `/research/<slug>` for each research area.
 
@@ -92,20 +100,21 @@ Rendered page file: `src/pages/news.astro`
 5. Run `npm run build` and verify newest items appear first on `/news`.
 
 ### Publications page (`/publications`)
-Data file: `src/data/publications.json`
+Data file: `src/data/publications.bib`
 Rendered page file: `src/pages/publications.astro`
-1. Add or edit publication objects in `src/data/publications.json`.
+1. Add or edit BibTeX entries in `src/data/publications.bib`.
 2. Required fields:
    - `title`
-   - `authors`
-   - `venue`
+   - `author`
    - `year`
+   - one of `journal`, `booktitle`, `publisher`, `school`, or `howpublished`
 3. Optional fields:
+   - `abstract`
    - `doi`
    - `url`
    - `pdf`
-   - `highlight`
-4. Keep JSON valid (double quotes, commas, no trailing commas).
+   - `keywords` or `note` containing `highlight` or `featured`
+4. Keep BibTeX syntax valid with balanced braces and commas between fields.
 5. Run `npm run build` and verify order and links on `/publications`.
 
 ### Team page (`/team`)

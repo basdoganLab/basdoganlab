@@ -1,24 +1,14 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
-import publicationsData from '~/data/publications.json';
-
-interface Publication {
-  title: string;
-  authors: string[];
-  venue: string;
-  year: number;
-  doi?: string;
-  url?: string;
-  pdf?: string;
-  highlight?: boolean;
-}
+import publicationsBib from '~/data/publications.bib?raw';
+import { parseBibTeX, type Publication } from '~/utils/publications';
 
 const metadata = {
   title: 'Publications',
   description: 'Selected publications from Basdogan Lab.',
 };
 
-const publications = (publicationsData as Publication[]).sort((a, b) => {
+const publications = parseBibTeX(publicationsBib).sort((a: Publication, b: Publication) => {
   if (a.year !== b.year) return b.year - a.year;
   return a.title.localeCompare(b.title);
 });
@@ -44,6 +34,19 @@ const publications = (publicationsData as Publication[]).sort((a, b) => {
               {paper.url ? <a class="text-sky-700 hover:underline" href={paper.url}>Link</a> : null}
               {paper.pdf ? <a class="text-sky-700 hover:underline" href={paper.pdf}>PDF</a> : null}
             </div>
+            {
+              paper.abstract ? (
+                <details class="mt-4 rounded-xl border border-gray-200 bg-gray-50 px-4 py-3">
+                  <summary class="cursor-pointer text-sm font-medium text-sky-700 marker:hidden list-none">
+                    <span class="inline-flex items-center gap-2">
+                      <span>Abs</span>
+                      <span class="text-gray-500">Show abstract</span>
+                    </span>
+                  </summary>
+                  <p class="mt-3 text-sm leading-7 text-gray-700">{paper.abstract}</p>
+                </details>
+              ) : null
+            }
           </article>
         ))
       }

@@ -6,65 +6,96 @@ export interface ResearchArea {
   focus: string[];
   methods: string[];
   recentDirections: string[];
+  figures?: ResearchFigure[];
+}
+
+export interface ResearchFigure {
+  src: string;
+  alt: string;
+  caption: string;
+  scale?: number;
+  width?: number;
+  height?: number;
 }
 
 export const researchAreas: ResearchArea[] = [
   {
-    slug: 'molecular-simulation-multiscale-modeling',
-    title: 'Molecular Simulation and Multiscale Modeling',
+    slug: 'computational-electrocatalyst-design',
+    title: 'Computational Electrocatalyst Design',
     summary:
-      'Integrating atomistic and coarse-grained methods to understand structure-property relationships in complex materials.',
+      'DFT and machine learning enable discovery of molecular and single-atom electrocatalysts.',
     overview:
-      'This thrust develops predictive models across length and time scales. We connect molecular mechanisms to measurable bulk behavior and design principles.',
+      'Current research centers on the computational design and discovery of electrocatalysts for sustainable energy conversion by combining first-principles simulations and machine learning techniques. Density functional theory (DFT) calculations are used to study reaction mechanisms, spin-state effects, and proton-coupled electron-transfer processes in electrochemical reactions such as CO₂ reduction (CO₂RR) and the oxygen reduction reaction (ORR). At the same time, data-driven and machine learning frameworks are being developed to efficiently explore large chemical spaces by integrating molecular descriptors and quantum-mechanical features. These approaches are used to discover and optimize nitrogen-heterocyclic molecular catalysts and Fe–N–C single-atom catalysts, aiming to elucidate how electronic structure, coordination environment, and catalyst composition influence catalytic activity, selectivity, and stability.',
     focus: [
-      'Polymer crystallinity, chain packing, and morphology evolution',
-      'Multiscale coupling between atomistic and coarse-grained simulations',
-      'Structure-property prediction for sustainable materials',
+      'Machine-learning-guided catalyst discovery',
+      'Design of earth-abundant molecular and single-atom catalysts for sustainable energy conversion',
+      'First-Principles Modeling of Electrocatalytic Reaction Mechanisms',
     ],
-    methods: ['Molecular dynamics', 'Coarse-grained simulation', 'Free-energy analysis', 'Uncertainty quantification'],
+    methods: ['Genetic Algorithm and Machine learning', 'Density Functional Theory Calculations / Growing String Method (GSM)', 'Computational Hydrogen Electrode (CHE) formulism'],
     recentDirections: [
-      'Automated setup pipelines for semicrystalline simulation systems',
-      'Benchmarking force-field transferability across chemistries',
-      'Reproducible workflows for high-throughput simulation studies',
+      'CO₂ Reduction Reaction (CO2RR)',
+      'Oxygen Reduction Reaction (ORR)',
+      'Nitrogen Reduction Reaction (NRR)',
+    ],
+    figures: [
+      {
+        src: '~/assets/images/research1-1.svg',
+        alt: 'ML-Guided Evolutionary Search for Molecular Catalyst Discovery and Optimization',
+        caption: 'ML-Guided Evolutionary Search for Molecular Catalyst Discovery and Optimization',
+        scale: 1.2,
+      },
+      {
+        src: '~/assets/images/research1-2.svg',
+        alt: 'Solvation Effects in Pyridine-Catalyzed CO₂ Reduction to Formic Acid',
+        caption: 'Solvation Effects in Pyridine-Catalyzed CO₂ Reduction to Formic Acid',
+        scale: 1.2,
+      }
     ],
   },
   {
-    slug: 'data-driven-scientific-discovery',
-    title: 'Data-Driven Scientific Discovery',
+    slug: 'AI-accelerated-polymer-design',
+    title: 'AI-Accelerated Polymer Design',
     summary:
-      'Using machine learning and statistical inference to accelerate hypothesis generation and reduce experimental search space.',
+      'Integrating simulations and machine learning to uncover polymer structure–property relationships and accelerate materials discovery',
     overview:
-      'This direction combines domain knowledge with data-driven models to prioritize experiments and simulations that maximize scientific insight.',
+      'Accelerated polymer design is an emerging research direction that integrates multiscale molecular simulations with machine learning to understand polymer structure–property relationships and guide molecular design. Recent advances in generative AI and active learning are enabling more efficient exploration of polymer chemical space and accelerating the discovery of high-performance functional materials.',
     focus: [
-      'Surrogate models for expensive simulation outputs',
-      'Active-learning loops for adaptive sampling',
-      'Interpretable models for mechanism discovery',
+      'Functional polymer design for gas separation membranes, ion exchange membranes, etc.',
+      'Structure–property relationships in polymer engineering',
+      'Accelerated discovery of high-performance polymers through simulation and data-driven design',
     ],
-    methods: ['Scientific machine learning', 'Bayesian optimization', 'Feature engineering', 'Model interpretability'],
+    methods: ['Multiscale molecular simulations for gas transport in polymers', 'Machine learning for molecular representation and property prediction', 'Data-driven screening and active learning frameworks for polymer discovery'],
     recentDirections: [
-      'Active-learning campaigns for materials property exploration',
-      'Physics-aware descriptors for robust model transfer',
-      'Uncertainty-aware ranking of candidate systems',
+      'Generative models for polymer and molecular design',
+      'Large Language Models (LLMs) for encoding and leveraging chemical knowledge',
+      'AI-guided exploration of polymer chemical space through active learning and autonomous workflows',
     ],
   },
   {
-    slug: 'computational-infrastructure-reproducible-science',
-    title: 'Computational Infrastructure for Reproducible Science',
+    slug: 'molecular-simulations-of-complex-systems',
+    title: 'Molecular simulations of Complex Systems',
     summary:
-      'Designing robust software workflows, benchmark datasets, and validation protocols for high-quality computational research.',
+      'Using enhanced-sampling molecular dynamics to study membrane permeation and polymer binding in complex molecular systems',
     overview:
-      'This line of work builds maintainable scientific software and reproducible pipelines so that results are portable, auditable, and extensible.',
+      'This line of work applies molecular dynamics simulations, particularly enhanced sampling methods, to investigate complex molecular processes in biomolecular and polymer systems. One major direction is studying antibiotic permeation through protein membranes to reveal transport pathways, free-energy barriers, and key molecular determinants of permeability. Another direction is simulating plastic polymers and their interactions with target substances, with emphasis on binding thermodynamics, molecular recognition, and adsorption behavior. By combining atomistic modeling with advanced sampling techniques, this work aims to uncover mechanisms that are difficult to resolve experimentally and to provide quantitative insight into transport and interaction phenomena relevant to drug delivery, membrane biology, and functional materials design.',
     focus: [
-      'Versioned datasets and provenance-aware workflows',
-      'Testable and reusable scientific codebases',
-      'Validation and benchmarking standards for simulation studies',
+      'Molecular mechanisms in biomolecular and polymer systems',
+      'Antibiotic permeation through protein membranes',
+      'Polymer–molecule interactions and binding thermodynamics',
     ],
-    methods: ['CI/CD for scientific code', 'Automated regression testing', 'Data versioning', 'Containerized execution'],
+    methods: ['Atomistic molecular dynamics simulations', 'Enhanced sampling methods for rare-event exploration', 'Free-energy calculations and binding-energy analysis'],
     recentDirections: [
-      'Lab-wide templates for reproducible project setup',
-      'Continuous integration checks for numerical consistency',
-      'Standardized benchmark suites for method comparison',
+      'Quantifying antibiotic permeation pathways and energetic barriers in membrane proteins',
+      'Investigating how polymer chemistry and structure affect binding affinity to target molecules',
+      'Developing robust simulation workflows for difficult transport and adsorption processes',
+    ],
+    figures: [
+      {
+        src: '~/assets/images/research3-1.png',
+        alt: 'Molecular Dynamics Simulation Setup for Antibiotic Translocation',
+        caption: 'Molecular Dynamics Simulation Setup for Antibiotic Translocation',
+        scale: 1.2,
+      },
     ],
   },
 ];
-

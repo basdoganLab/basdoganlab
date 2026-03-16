@@ -58,16 +58,17 @@ This repository contains the v1 website with six core pages:
   - `order: number`
 
 ### Publications
-- File: `src/data/publications.json`
+- File: `src/data/publications.bib`
 - Schema:
   - `title: string`
-  - `authors: string[]`
-  - `venue: string`
+  - `author: BibTeX author list`
   - `year: number`
+  - `journal | booktitle | publisher | school | howpublished`
+  - `abstract?: string`
   - `doi?: string`
   - `url?: string`
   - `pdf?: string`
-  - `highlight?: boolean`
+  - `keywords?: string` with `highlight` to feature an entry
 
 ## Deployment
 
