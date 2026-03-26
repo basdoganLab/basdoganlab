@@ -6,39 +6,35 @@
     "photo": "/images/Basdogan_Yasemin.jpg",
     "email": "yaseminbasdogan@rochester.edu",
     "website": "https://basdoganlab.github.io/basdoganlab/",
-    "researchInterests": ["Computational Modeling", "Scientific Machine Learning"],
-    "order": 1
+    "researchInterests": ["Computational Modeling", "Scientific Machine Learning"]
   },
   {
     "name": "Yusuf Adegbesan",
-    "role": "PhD Candidate",
+    "role": "PhD",
     "section": "current",
     "photo": "/images/yusuf-adegbesan.png",
     "email": "yadegbes@UR.Rochester.edu",
     "bio": "Yusuf is a PhD candidate whose research centers on computational catalyst discovery using density functional theory (DFT) calculations and machine learning. His work involves developing integrated computational frameworks that combine quantum-mechanical calculations with data-driven modeling to speed up the discovery of catalysts for sustainable energy conversion reactions. His current research focuses on machine-learning-guided catalyst design, where DFT calculations are combined with genetic algorithms to efficiently explore large chemical spaces. Yusuf holds a bachelor’s degree in chemical engineering from Ahmadu Bello University, Nigeria, and a master’s degree in petroleum engineering from Imperial College London, UK.",
-    "researchInterests": ["Computational catalysis", "DFT", "Machine learning"],
-    "order": 20
+    "researchInterests": ["Computational catalysis", "DFT", "Machine learning"]
   },
   {
     "name": "Beam (Bingmeng) Wang",
-    "role": "PhD Candidate",
+    "role": "PhD",
     "section": "current",
     "photo": "/images/beam-wang.jpg",
     "email": "bwang69@ur.rochester.edu",
     "bio": "Beam is a PhD student interested in the accelerated discovery of functional polymer membranes. His work combines multiscale molecular simulations with data-driven methods, including structural representation learning based on Graph Neural Networks (GNNs) and Chemical Language Models (CLMs), and generative AI approaches. Currently, he explores the untapped potential of Large Language Models (LLMs) to encode chemical knowledge and reasoning. His work investigates how LLMs can be combined with molecular simulations, machine-learning models, and active learning strategies to guide polymer design and efficiently navigate the vast chemical space. The ultimate goal is to reduce reliance on iterative trial-and-error and accelerate the discovery of next-generation high-performance polymers.",
-    "researchInterests": ["Representation learning", "Computational polymer design", "Large language models"],
-    "order": 21
+    "researchInterests": ["Representation learning", "Computational polymer design", "Large language models"]
   },
   {
     "name": "Yangtao Chen",
-    "role": "PhD Candidate",
+    "role": "PhD",
     "section": "current",
     "photo": "/images/yangtao-chen.jpg",
     "email": "yangtao.chen@rochester.edu",
     "bio": "Yangtao is a cat slave, AI enthusiast, and active agent user. He is also a PhD student in the Basdogan Lab, where his research primarily focuses on molecular simulations of biomembranes and polymers. His current work centers on designing new antibiotics by integrating molecular simulations with machine learning techniques.",
     "website": "https://cytwyatt.github.io",
-    "researchInterests": ["Molecular simulation", "Computational polymer design"],
-    "order": 22
+    "researchInterests": ["Molecular simulation", "Computational polymer design"]
   },
   {
     "name": "Jay-Brian Randone",
@@ -47,8 +43,7 @@
     "photo": "/images/Jay-Brian-Randone.JPG",
     "email": "jrandone@u.rochester.edu",
     "bio": "Jay-Brian Randone is a senior in Chemical Engineering from Italy and Indonesia, and is currently doing his Bachelors and Masters degree at the University of Rochester. His work incorporates Graph Neural Networks, Machine Learning Models, Genetic Algorithms and Molecular Dynamic simulations for Designing CO₂-Selective Polymer Membranes.",
-    "researchInterests": ["Computational Modeling", "Machine Learning", "Sustainability Research"],
-    "order": 40
+    "researchInterests": ["Computational Modeling", "Machine Learning", "Sustainability Research"]
   },
   {
     "name": "Sonia Panjwani",
@@ -57,8 +52,25 @@
     "photo": "/images/Sonia-Panjwani.JPG",
     "email": "spanjwan@u.rochester.edu",
     "bio": "Sonia is a senior chemical engineering student at the University of Rochester from Seattle, Washington. Her work incorporates Density Functional Theory, Growing String Method, and Genetic Algorithms for designing pyridine based catalysts used in electrochemical CO2 reduction.",
-    "researchInterests": ["Machine Learning", "Catalysis", "GSM", "DFT"],
-    "order": 41
+    "researchInterests": ["Machine Learning", "Catalysis", "GSM", "DFT"]
+  },
+  {
+    "name": "Huzaifa Muhammad",
+    "role": "Undergraduate",
+    "section": "current",
+    "photo": "/images/huzaifa.jpg",
+    "email": "hmuhamm2@u.rochester.edu",
+    "bio": "Huzaifa Muhammad is a senior in Chemical Engineering at the University of Rochester, originally from Rochester, NY. His research focuses on the computational design of catalysts for sustainable energy conversion. Using Density Functional Theory (DFT) calculations, Quantum Chemistry, and Genetic Algorithms, Huzaifa’s work explores new catalyst candidates for the electrochemical reduction of CO₂ to formic acid and for Ammonia production. Through his involvement in the Basdogan Lab, he aims to contribute to the development of efficient, earth-abundant catalysts for clean energy applications.",
+    "researchInterests": ["Machine Learning", "Genetic Algorithm", "Metal Organic Frameworks (MOFs)", "Catalysis"]
+  },
+  {
+    "name": "Reward Mulauzi",
+    "role": "Undergraduate",
+    "section": "current",
+    "photo": "/images/reward.jpg",
+    "email": "spanjwan@u.rochester.edu",
+    "bio": "Reward Mulauzi is a Chemical Engineering student at the University of Rochester working on solvation research. He studies lean and non-lean systems for applications like CO₂ capture and separations, with a focus on what’s really happening at the molecular level. His goal is simple: turn small-scale interactions into real-world, energy-efficient solutions. ",
+    "researchInterests": ["Sustainability Research", "Catalysis", "DFT"]
   },
   {
     "name": "Mahima Vasudevan",
@@ -67,8 +79,7 @@
     "photo": "/images/mahima-vasudevan.jpg",
     "email": "mvasudev@u.rochester.edu",
     "bio": "Originally from India and raised in Pittsburgh, Mahima Vasudevan is a Biomedical Engineering undergraduate at the University of Rochester, concentrating in cell and tissue engineering with a minor in sustainability. She is a researcher in the Basdogan Lab in the Department of Chemical Engineering, where she is developing computational approaches to analyze and enhance the enzyme PETase. Her work uses molecular dynamics simulations and explores hybrid quantum mechanics/molecular mechanics (QM/MM) methods to investigate catalytic mechanisms at the enzyme’s active site.",
-    "researchInterests": ["PETase", "Molecular Dynamics Simulations", "QM/MM", "Catalytic Mechanisms"],
-    "order": 42
+    "researchInterests": ["PETase", "Molecular Dynamics Simulations", "QM/MM", "Catalytic Mechanisms"]
   },
   {
     "name": "Kinsley Collum",
@@ -77,8 +88,7 @@
     "photo": "/images/kinsley-collum.jpeg",
     "email": "kcollum@u.rochester.edu",
     "bio": "Kinsley Collum is a sophomore in chemical engineering at the University of Rochester and is originally from Mississippi. Her research interest include environmental and electrochemical engineering, particularly the use of electrooxidation reactions that convert hydrocarbons into useful chemical products.",
-    "researchInterests": ["Electro-oxidation", "Catalytic Mechanisms"],
-    "order": 43
+    "researchInterests": ["Electro-oxidation", "Catalytic Mechanisms"]
   },
   {
     "name": "Siddharth Balaji",
@@ -89,7 +99,6 @@
     "bio": "Siddharth is currently an M.S. student in Materials Science and Engineering at Georgia Tech. As a former Research Intern in the Basdogan Lab, he developed a Genetic Algorithm pipeline to predict CO₂ permeability in polymer membranes using machine learning models and acquisition functions.",
     "previousPosition": "Research Intern",
     "timeAtLab": "2024",
-    "currentPosition": "M.S. student in Materials Science and Engineering at Georgia Tech",
-    "order": 50
+    "currentPosition": "M.S. student in Materials Science and Engineering at Georgia Tech"
   }
 ]

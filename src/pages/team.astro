@@ -15,7 +15,7 @@ interface TeamMember {
   timeAtLab?: string;
   currentPosition?: string;
   section?: 'pi' | 'current' | 'alumni';
-  order: number;
+  order?: number;
 }
 
 const metadata = {
@@ -23,7 +23,6 @@ const metadata = {
   description: 'Meet the Basdogan Lab team.',
 };
 
-const team = (teamData as TeamMember[]).sort((a, b) => a.order - b.order);
 const resolvePhoto = (photo: string) =>
   photo.startsWith('http://') || photo.startsWith('https://') ? photo : getAsset(photo);
 
@@ -38,6 +37,34 @@ const sections = [
   { key: 'current', title: 'Current Member' },
   { key: 'alumni', title: 'Alumni' },
 ] as const;
+
+const sectionPriority: Record<'pi' | 'current' | 'alumni', number> = {
+  pi: 0,
+  current: 1,
+  alumni: 2,
+};
+
+const rolePriority: Record<string, number> = {
+  PI: 0,
+  Postdoc: 1,
+  'PhD Candidate': 2,
+  PhD: 2,
+  Master: 3,
+  Undergraduate: 4,
+  Alumni: 5,
+};
+
+const team = (teamData as TeamMember[])
+  .map((member, index) => ({ ...member, originalIndex: index }))
+  .sort((a, b) => {
+    const sectionDiff = sectionPriority[getSection(a)] - sectionPriority[getSection(b)];
+    if (sectionDiff !== 0) return sectionDiff;
+
+    const roleDiff = (rolePriority[a.role] ?? 99) - (rolePriority[b.role] ?? 99);
+    if (roleDiff !== 0) return roleDiff;
+
+    return a.originalIndex - b.originalIndex;
+  });
 ---
 
 <Layout metadata={metadata}>
