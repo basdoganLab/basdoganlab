@@ -1,248 +1,372 @@
-# Website Maintenance Instructions
+# Website Maintenance Guide
 
-This document is for lab members who maintain the Basdogan Lab website.
+This document is the operational guide for maintaining the Basdogan Lab website.
 
-## 0. Run Locally
+## Agent-First Workflow
+
+This repository should usually be updated through an AI coding agent rather than direct manual editing.
+
+1. Ask the agent to make the requested website update.
+2. Have a human review the resulting changes and preview the affected pages.
+3. Approve the update or request follow-up fixes.
+4. Use repo-local skills from `skills/<skill-name>/SKILL.md`.
+5. For website maintenance in this repository, use `skills/basdoganlab-website-updater/SKILL.md`.
+
+This workflow is preferred because the site spans Astro pages, Markdown, JSON, TypeScript data, and BibTeX. Agent-guided updates are less likely to miss linked source files or introduce formatting mistakes.
+
+Repo-local skill conventions are documented in `skills/README.md`.
+
+## 1. Run Locally
 
 ### Prerequisites
-1. Node.js 20+ installed.
-2. Run from repository root: `basdoganlab/`.
+
+1. Install Node.js 20+.
+2. Run commands from the repository root.
 
 ### Install dependencies
-1. Run:
-   ```bash
-   npm ci
-   ```
 
-### Development mode (hot reload)
-1. Start dev server:
-   ```bash
-   npm run dev -- --host 127.0.0.1 --port 4321
-   ```
-2. Open:
-   - `http://127.0.0.1:4321/basdoganlab`
-3. Stop server with `Ctrl + C`.
+```bash
+npm ci
+```
 
-### Production preview (same output as deploy)
-1. Build:
+### Development mode
+
+```bash
+npm run dev -- --host 127.0.0.1 --port 4321
+```
+
+Open:
+
+- `http://127.0.0.1:4321/basdoganlab`
+
+### Production preview
+
+1. Build the site:
+
    ```bash
    npm run build
    ```
-2. Preview:
+
+2. Preview the production output:
+
    ```bash
    npm run preview -- --host 127.0.0.1 --port 4321
    ```
+
 3. Open:
-   - `http://127.0.0.1:4321/basdoganlab`
-4. Stop server with `Ctrl + C`.
 
-### Quick local verification checklist
-1. Home: `/basdoganlab`
-2. Research: `/basdoganlab/research`
-3. News: `/basdoganlab/news`
-4. Publications: `/basdoganlab/publications`
-5. Team: `/basdoganlab/team`
-6. Contact: `/basdoganlab/contact`
+- `http://127.0.0.1:4321/basdoganlab`
 
-## 1. Page-by-Page Update Guide
+### Quick verification routes
 
-Use this section to update each public page explicitly: Home, Research, News, Publications, Team, and Contact.
+- `/basdoganlab`
+- `/basdoganlab/research`
+- `/basdoganlab/news`
+- `/basdoganlab/publications`
+- `/basdoganlab/team`
+- `/basdoganlab/contact`
 
-### Home page (`/`)
-File: `src/pages/index.astro`
-1. Update hero title, subtitle, and call-to-action text in the top section.
-2. Update the three summary cards (Research, Publications, Join Us) as needed.
-3. Keep links using `getPermalink(...)` for project-site compatibility.
-4. Run `npm run build` and confirm `/` renders as expected.
+## 2. Page-by-Page Update Guide
 
-### Research page (`/research`)
-Main listing file: `src/pages/research.astro`
-Research data source: `src/data/research.ts`
-Detail page template: `src/pages/research/[slug].astro`
-1. Edit research content in `src/data/research.ts` only.
-2. For each area, maintain:
-   - `slug`
-   - `title`
-   - `summary`
-   - `overview`
-   - `focus`
-   - `methods`
-   - `recentDirections`
-   - Optional `figures`
-     - `src`
-     - `alt`
-     - `caption`
-     - Optional `scale` (`1` = base size, `0.75` = 75% width, `2` = 200% width up to the container limit)
-     - Optional `width`
-     - Optional `height`
-3. The listing page and detail pages update automatically from this data.
-4. For figures, prefer images in `src/assets/images/` and reference them like `~/assets/images/your-figure.png`.
-5. Run `npm run build` and verify:
-   - `/research`
-   - `/research/<slug>` for each research area.
+Use the data source for content updates whenever possible. Only edit page templates when changing layout or rendering behavior.
 
-### News page (`/news`)
-Content folder: `src/content/news/`
-Rendered page file: `src/pages/news.astro`
-1. Add one Markdown file per news item: `YYYY-MM-DD-title.md`.
-2. Use required frontmatter:
-   ```md
-   ---
-   title: "Your title"
-   date: 2026-02-20
-   summary: "One sentence summary."
-   tags: ["tag1", "tag2"]
-   draft: false
-   ---
+### Home
+
+- Page: `src/pages/index.astro`
+
+Update:
+
+- hero title, subtitle, and call-to-action text
+- homepage summary cards and links
+
+Keep internal links using `getPermalink(...)`.
+
+### Research
+
+- Listing page: `src/pages/research.astro`
+- Detail template: `src/pages/research/[slug].astro`
+- Source data: `src/data/research.ts`
+
+For routine updates, edit `src/data/research.ts`.
+
+Each research area should include:
+
+- `slug`
+- `title`
+- `summary`
+- `overview`
+- `focus`
+- `methods`
+- `recentDirections`
+- optional `figures`
+
+For figures:
+
+- Prefer files in `src/assets/images/`
+- Reference them as `~/assets/images/...`
+- Include `alt` and `caption`
+- Use optional `scale` when needed for display width
+
+After updating Research, verify:
+
+- `/research`
+- `/research/<slug>` for each changed area
+
+### News
+
+- Page: `src/pages/news.astro`
+- Collection schema: `src/content/config.ts`
+- Entries: `src/content/news/*.md`
+
+Add one Markdown file per news item using a name like:
+
+- `YYYY-MM-DD-short-title.md`
+
+Required frontmatter:
+
+```md
+---
+title: "Your title"
+date: 2026-02-20
+summary: "One sentence summary."
+tags: ["tag1", "tag2"]
+draft: false
+---
+```
+
+Notes:
+
+- `draft: true` hides an item
+- items are shown newest-first
+- optional body text is allowed, but the current page only displays summary and tags
+
+### Publications
+
+- Page: `src/pages/publications.astro`
+- Data file: `src/data/publications.bib`
+- Parser: `src/utils/publications.ts`
+
+Add or edit BibTeX entries in `src/data/publications.bib`.
+
+Required practical fields:
+
+- `title`
+- `author`
+- `year`
+- one of `journal`, `booktitle`, `publisher`, `school`, or `howpublished`
+
+Useful optional fields:
+
+- `abstract`
+- `doi`
+- `url`
+- `pdf`
+- `keywords`
+- `note`
+
+Keep BibTeX syntax valid. If an entry does not render, check for missing required fields first.
+
+### Team
+
+- Team page: `src/pages/team.astro`
+- PI profile page: `src/pages/team/pi.astro`
+- Data file: `src/data/team.json`
+
+For normal roster updates, edit `src/data/team.json`.
+
+Common fields:
+
+- `name`
+- `role`
+- `section`
+- `photo`
+- `email`
+- `website`
+- `bio`
+- `researchInterests`
+- `previousPosition`
+- `timeAtLab`
+- `currentPosition`
+
+Sections:
+
+- `pi`
+- `current`
+- `alumni`
+
+Photo guidance:
+
+- Put local photos in `public/images/`
+- Reference them as `/images/...`
+
+Sorting guidance:
+
+- The current Team page sorts by section, then role, then JSON order
+- Do not rely on `order` to control display unless the page logic is updated
+- Reorder entries in `src/data/team.json` when you need a different order within the same section and role
+
+### PI profile page
+
+The PI profile is split across two sources:
+
+- basic profile data in `src/data/team.json`
+- long-form page text in `src/pages/team/pi.astro`
+
+Edit `src/pages/team/pi.astro` when updating:
+
+- biography
+- research program description
+- mentorship philosophy
+- open position language
+
+### Contact
+
+- Page: `src/pages/contact.astro`
+
+This page is currently hardcoded. Edit it directly for:
+
+- PI name
+- email
+- office and mailing address
+- collaboration text
+- application instructions
+
+If contact details change, also check:
+
+- `src/data/team.json`
+- `src/navigation.ts`
+
+## 3. Standard Update Sequence
+
+1. Create a branch such as `feature/<short-name>`.
+2. Make changes in the correct data file or page template.
+3. Run:
+
+   ```bash
+   npm run build
    ```
-3. Add optional body text below frontmatter.
-4. Keep `draft: false` for published items.
-5. Run `npm run build` and verify newest items appear first on `/news`.
 
-### Publications page (`/publications`)
-Data file: `src/data/publications.bib`
-Rendered page file: `src/pages/publications.astro`
-1. Add or edit BibTeX entries in `src/data/publications.bib`.
-2. Required fields:
-   - `title`
-   - `author`
-   - `year`
-   - one of `journal`, `booktitle`, `publisher`, `school`, or `howpublished`
-3. Optional fields:
-   - `abstract`
-   - `doi`
-   - `url`
-   - `pdf`
-   - `keywords` or `note` containing `highlight` or `featured`
-4. Keep BibTeX syntax valid with balanced braces and commas between fields.
-5. Run `npm run build` and verify order and links on `/publications`.
+4. If the change is visual or substantial, preview locally with:
 
-### Team page (`/team`)
-Data file: `src/data/team.json`
-Rendered page file: `src/pages/team.astro`
-1. Add or edit team entries in `src/data/team.json`.
-2. Required fields:
-   - `name`
-   - `role`
-   - `photo`
-   - `order`
-3. Optional fields:
-   - `email`
-   - `website`
-   - `researchInterests`
-4. Put images in `public/images/` and reference as `/images/...`.
-5. Use `order` to control display sequence.
-6. Run `npm run build` and verify `/team`.
+   ```bash
+   npm run dev -- --host 127.0.0.1 --port 4321
+   ```
 
-### Contact page (`/contact`)
-File: `src/pages/contact.astro`
-1. Update PI name, email, office location, and application instructions.
-2. Keep contact email and role text concise and current.
-3. Run `npm run build` and verify `/contact`.
+5. Verify the affected routes.
+6. Open a pull request to `main`.
 
-### Standard update sequence (for any page)
-1. Create a branch: `git checkout -b feature/<short-name>`.
-2. Make edits in the correct source file(s).
-3. Run checks:
-   - `npm ci` (if dependencies changed)
-   - `npm run build`
-4. Preview locally with `npm run dev`.
-5. Open PR to `main`, get review, merge.
+Run `npm ci` only when dependencies change or the local install is missing or broken.
 
-## 2. Release Process
+## 4. Release Process
 
 ### Branch and PR workflow
-1. Create feature branch: `git checkout -b feature/<short-name>`.
-2. Commit changes with clear message.
-3. Open pull request to `main`.
+
+1. Create a feature branch.
+2. Commit changes with a clear message.
+3. Open a pull request to `main`.
 4. Require at least one reviewer before merge.
 
 ### Required checks before merge
-1. `npm ci`
-2. `npm run build`
-3. Verify affected page locally with `npm run dev`.
-4. Confirm JSON/Markdown schema compliance.
+
+1. `npm run build`
+2. Visual verification of affected pages
+3. Schema and syntax checks for edited Markdown, JSON, TypeScript data, and BibTeX
 
 ### Deploy verification checklist
-1. Confirm GitHub Actions `deploy.yml` completed successfully.
-2. Open public URL and verify:
-   - Home loads
-   - navigation links to all 6 pages
-   - updated content visible
-3. Check mobile viewport for layout regressions.
-4. Confirm no console/network errors in browser dev tools.
+
+1. Confirm the GitHub Actions deploy workflow completed successfully.
+2. Open the public site and verify:
+   - the affected page loads
+   - updated content appears
+   - navigation still works
+3. Check mobile layout for regressions.
+4. Confirm there are no obvious console or network errors in the browser.
 
 ### Rollback procedure
-1. Identify last known-good commit from `main` history.
-2. Revert bad commit(s):
+
+1. Identify the last known-good commit on `main`.
+2. Revert the bad commit or commits:
+
    ```bash
    git checkout main
    git pull
    git revert <bad-commit-sha>
    git push
    ```
-3. Wait for auto-deploy and verify site restored.
 
-## 3. Operations Schedule
+3. Wait for redeploy and verify the site is restored.
+
+## 5. Operations Schedule
 
 ### Monthly
-- Run dependency updates (`npm outdated`, then selective updates).
-- Rebuild and verify deploy.
+
+- review dependency updates
+- rebuild and verify deploy health
 
 ### Quarterly
-- Link check on all pages.
-- Remove stale announcements and outdated opportunities.
+
+- check links across all public pages
+- remove stale announcements and outdated opportunities
 
 ### Each semester
-- Validate team roster and roles.
-- Archive alumni or update positions.
+
+- update the team roster and roles
+- move former members into alumni as needed
 
 ### Yearly
-- Clean publication metadata consistency:
-  - author order
-  - venue naming
-  - DOI/link validity
 
-## 4. Domain and DNS Operations
+- clean publication metadata consistency
+- review DOI and external links
+- review domain and certificate health
+
+## 6. Domain and DNS Operations
 
 ### CNAME ownership
-- Source of truth: root `CNAME` file.
-- Must match custom domain configured in GitHub Pages.
+
+- the source of truth is the root `CNAME` file
+- it must match the custom domain configured in GitHub Pages
 
 ### DNS expectations
-- Apex domain: A/ALIAS records for GitHub Pages.
-- `www`: CNAME to `<org-or-user>.github.io`.
-- DNS changes may take minutes to 48 hours.
+
+- apex domain should point to GitHub Pages endpoints with A or ALIAS records
+- `www` should be a CNAME to `<org-or-user>.github.io`
+- DNS changes can take minutes to 48 hours
 
 ### HTTPS verification
-1. In GitHub Pages settings, wait until certificate is issued.
-2. Enable "Enforce HTTPS".
-3. Verify browser shows secure lock icon.
-4. Verify no mixed-content warnings in console.
 
-## 5. Troubleshooting
+1. Wait for the GitHub Pages certificate to be issued.
+2. Enable HTTPS enforcement in repository settings.
+3. Confirm the site loads securely without mixed-content warnings.
+
+## 7. Troubleshooting
 
 ### Build fails
-1. Run `npm ci` again to reset dependencies.
+
+1. Re-run `npm run build` and read the first error carefully.
 2. Check JSON syntax in `src/data/*.json`.
-3. Check frontmatter fields in `src/content/news/*.md`.
-4. Re-run `npm run build` and read first error.
+3. Check frontmatter and filenames in `src/content/news/*.md`.
+4. Check BibTeX syntax in `src/data/publications.bib`.
+5. If dependencies are broken locally, run `npm ci`.
 
-### Missing image/content
-1. Confirm file exists under `public/images/`.
-2. Confirm path starts with `/images/...` in JSON/pages.
-3. Confirm content file names are unique and valid.
+### Content does not appear
 
-### GitHub Pages propagation delay
-- New deploys may take a few minutes.
-- Domain and certificate changes can take significantly longer.
-- Check Actions logs and Pages settings before re-deploying.
+1. Confirm the edited file is the real source for that page.
+2. Confirm required schema fields are present.
+3. Confirm the content is not hidden by `draft: true`.
+4. Confirm image paths follow the repo conventions.
 
-## 6. Ownership Matrix
+### Images do not load
 
-- PI content delegate:
-  - approves scientific wording, publication visibility, and people updates.
-- Technical maintainer:
-  - owns CI/CD workflow, deployment health, and DNS/domain settings.
-- Backup reviewer:
-  - can approve urgent hotfix PRs and execute rollback if primary maintainer is unavailable.
+1. For public images, confirm the file exists under `public/images/` and the path starts with `/images/...`.
+2. For build-time research images, confirm the file exists under `src/assets/images/` and is referenced as `~/assets/images/...`.
+
+### GitHub Pages delay
+
+- new deploys may take a few minutes
+- domain or certificate changes can take much longer
+- check GitHub Actions logs and Pages settings before retrying
+
+## 8. Notes
+
+- `public/decapcms/config.yml` is stale and does not represent the actual content workflow for this site.
+- The current content model is file-based and should be treated as the source of truth.
