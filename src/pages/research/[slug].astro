@@ -46,7 +46,7 @@ const figureMaxWidth = (scale?: number) => `${Math.round(672 * clampScale(scale)
               class="w-full rounded-2xl border border-gray-200 bg-white shadow-sm"
               style={`max-width: min(100%, ${figureMaxWidth(figure.scale)});`}
             >
-              <div class="flex justify-center bg-gray-100 p-4">
+              <div class="flex justify-center bg-inherit p-4">
                 <Image
                   src={figure.src}
                   alt={figure.alt}

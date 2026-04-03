@@ -70,6 +70,14 @@ export const researchAreas: ResearchArea[] = [
       'Large Language Models (LLMs) for encoding and leveraging chemical knowledge',
       'AI-guided exploration of polymer chemical space through active learning and autonomous workflows',
     ],
+    figures: [
+      {
+        src: '~/assets/images/research2-1.png',
+        alt: 'AI-Driven Polymer Design Workflow',
+        caption: 'AI-Driven Polymer Design Workflow',
+        scale: 1.2,
+      },
+    ],
   },
   {
     slug: 'molecular-simulations-of-complex-systems',
