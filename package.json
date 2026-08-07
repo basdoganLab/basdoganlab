@@ -10,6 +10,7 @@
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
+    "sync:publications": "node scripts/sync-google-scholar.mjs --user 7cO3kcAAAAAJ",
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",

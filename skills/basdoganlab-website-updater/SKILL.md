@@ -17,7 +17,9 @@ This repo is an Astro site with a small number of content entry points. Before e
 - News entries: `src/content/news/*.md`
 - Publications page: `src/pages/publications.astro`
 - Publications parser: `src/utils/publications.ts`
-- Publications data: `src/data/publications.bib`
+- Scholar publications: `src/data/publications-scholar.bib` (generated)
+- Manual publications and overrides: `src/data/publications.bib`
+- Scholar sync script: `scripts/sync-google-scholar.mjs`
 - Team page: `src/pages/team.astro`
 - PI profile page: `src/pages/team/pi.astro`
 - Team data: `src/data/team.json`
@@ -91,7 +93,12 @@ If a request asks for full news post pages, that is not currently implemented an
 
 ### Publications
 
-Update `src/data/publications.bib`.
+Google Scholar publications are generated in `src/data/publications-scholar.bib`. Do not edit that file manually. The weekly
+GitHub Actions workflow in `.github/workflows/sync-publications.yml` updates it automatically, and the sync can also be run
+locally with `npm run sync:publications`.
+
+Add hand-curated publications or corrections to `src/data/publications.bib`. Manual records take precedence over generated
+records when their titles match case-insensitively.
 
 The page parses BibTeX at build time. Keep syntax valid.
 

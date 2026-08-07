@@ -143,10 +143,18 @@ Notes:
 ### Publications
 
 - Page: `src/pages/publications.astro`
-- Data file: `src/data/publications.bib`
+- Scholar data: `src/data/publications-scholar.bib` (generated)
+- Manual additions and overrides: `src/data/publications.bib`
 - Parser: `src/utils/publications.ts`
 
-Add or edit BibTeX entries in `src/data/publications.bib`.
+Google Scholar publications are synced every Monday by `.github/workflows/sync-publications.yml`. Run the sync locally with:
+
+```bash
+npm run sync:publications
+```
+
+Do not edit `src/data/publications-scholar.bib` manually. Add hand-curated entries to `src/data/publications.bib`; a manual
+entry replaces a Scholar entry when their titles match (case-insensitively).
 
 Required practical fields:
 

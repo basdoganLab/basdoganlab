@@ -7,6 +7,7 @@ export interface Publication {
   doi?: string;
   url?: string;
   pdf?: string;
+  scholar?: string;
   highlight?: boolean;
 }
 
@@ -189,6 +190,7 @@ const toPublication = (entry: BibEntry | null): Publication | null => {
   const doi = normalizeDoi(fields.doi);
   const url = fields.url;
   const pdf = fields.pdf;
+  const scholar = fields.scholar;
   const abstract = fields.abstract;
   const highlight = parseHighlight(fields);
 
@@ -201,6 +203,7 @@ const toPublication = (entry: BibEntry | null): Publication | null => {
     ...(doi ? { doi } : {}),
     ...(url ? { url } : {}),
     ...(pdf ? { pdf } : {}),
+    ...(scholar ? { scholar } : {}),
     ...(highlight ? { highlight } : {}),
   };
 };
